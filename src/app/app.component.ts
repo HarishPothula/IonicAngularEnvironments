@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -44,6 +45,7 @@ export class AppComponent implements OnInit {
     }
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  public environment = environment;
 
   constructor(
     private platform: Platform,
