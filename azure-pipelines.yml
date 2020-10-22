@@ -25,6 +25,8 @@ stages:
 
   - stage: deploy_dev
     displayName: Deploy to development
+    variables:
+    - group: Dev
     jobs:
     - deployment: DeployWeb
       environment: DEV
@@ -36,6 +38,8 @@ stages:
 
   - stage: deploy_prd
     displayName: Deploy to production
+    variables:
+    - group: Prod
     jobs:
     - deployment: DeployWeb
       environment: PRD
