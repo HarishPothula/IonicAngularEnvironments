@@ -18,6 +18,7 @@ stages:
             inputs:
               versionSpec: "10.x"
           - script: npm install
+          - script: npm install -g @ionic/cli
           - script: ionic build -- --prod
           - publish: www
             artifact: www
