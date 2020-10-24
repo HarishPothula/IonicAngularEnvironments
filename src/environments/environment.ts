@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  environment: 'Dev'
+  environment: 'Dev',
+  AuthId: 'Dev-123'
 };
 
 /*
