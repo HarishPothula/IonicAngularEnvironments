@@ -47,11 +47,6 @@ stages:
                   tokenSuffix: "}#"
                   useLegacyPattern: false
                   enableTelemetry: true
-              - task: PublishBuildArtifacts@1
-                inputs:
-                  PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-                  ArtifactName: 'dropDev'
-                  publishLocation: 'Container'
                   
   - stage: deploy_test
     displayName: Deploy to development
@@ -78,12 +73,6 @@ stages:
                   useLegacyPattern: false
                   enableTelemetry: true
 
-              - task: PublishBuildArtifacts@1
-                inputs:
-                  PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-                  ArtifactName: 'dropTest'
-                  publishLocation: 'Container'
-
   - stage: deploy_prd
     displayName: Deploy to production
     variables:
@@ -108,9 +97,3 @@ stages:
                   tokenSuffix: "}#"
                   useLegacyPattern: false
                   enableTelemetry: true
-
-              - task: PublishBuildArtifacts@1
-                inputs:
-                  PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-                  ArtifactName: 'dropProd'
-                  publishLocation: 'Container'
