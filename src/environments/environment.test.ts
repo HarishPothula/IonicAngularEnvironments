@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
-    environment: 'Test',
-    AuthId: 'Test-123'
+    environment: '#{environment}#',
+    AuthId: '#{authClientID}#'
 };
