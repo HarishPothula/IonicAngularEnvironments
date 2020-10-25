@@ -49,7 +49,7 @@ stages:
                   enableTelemetry: true
                   
   - stage: deploy_test
-    displayName: Deploy to development
+    displayName: Deploy to test
     variables:
     - group: Test
     jobs:
@@ -73,7 +73,7 @@ stages:
                   useLegacyPattern: false
                   enableTelemetry: true
 
-  - stage: deploy_prd
+  - stage: deploy_prod
     displayName: Deploy to production
     variables:
     - group: Prod
