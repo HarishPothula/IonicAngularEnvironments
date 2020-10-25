@@ -55,10 +55,9 @@ stages:
 
               - task: PublishBuildArtifacts@1
                 inputs:
-                      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-                      ArtifactName: 'drop'
-                      publishLocation: 'FilePath'
-                      TargetPath: '$(Pipeline.Workspace)/www-Dev'
+                        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+                        ArtifactName: 'drop'
+                        publishLocation: 'Container'
                   
   - stage: deploy_test
     displayName: Deploy to test
