@@ -52,6 +52,13 @@ stages:
                   SourceFolder: '$(Pipeline.Workspace)/www'
                   Contents: '**'
                   TargetFolder: '$(Pipeline.Workspace)/www-Dev'
+
+              - task: PublishBuildArtifacts@1
+                inputs:
+                      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+                      ArtifactName: 'drop'
+                      publishLocation: 'FilePath'
+                      TargetPath: '$(Pipeline.Workspace)/www-Dev'
                   
   - stage: deploy_test
     displayName: Deploy to test
@@ -83,6 +90,13 @@ stages:
                     SourceFolder: '$(Pipeline.Workspace)/www'
                     Contents: '**'
                     TargetFolder: '$(Pipeline.Workspace)/www-Test'
+
+              - task: PublishBuildArtifacts@1
+                inputs:
+                        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+                        ArtifactName: 'drop'
+                        publishLocation: 'FilePath'
+                        TargetPath: '$(Pipeline.Workspace)/www-Test'
 
   - stage: deploy_prod
     displayName: Deploy to production
