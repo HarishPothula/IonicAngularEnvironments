@@ -47,6 +47,11 @@ stages:
                   tokenSuffix: "}#"
                   useLegacyPattern: false
                   enableTelemetry: true
+              - task: CopyFiles@2
+                inputs:
+                  SourceFolder: '$(Pipeline.Workspace)/www'
+                  Contents: '**'
+                  TargetFolder: '$(Pipeline.Workspace)/www-Dev'
                   
   - stage: deploy_test
     displayName: Deploy to test
@@ -72,6 +77,12 @@ stages:
                   tokenSuffix: "}#"
                   useLegacyPattern: false
                   enableTelemetry: true
+
+              - task: CopyFiles@2
+                inputs:
+                    SourceFolder: '$(Pipeline.Workspace)/www'
+                    Contents: '**'
+                    TargetFolder: '$(Pipeline.Workspace)/www-Test'
 
   - stage: deploy_prod
     displayName: Deploy to production
