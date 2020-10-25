@@ -28,7 +28,7 @@ stages:
     variables:
     - group: Dev
     jobs:
-    - deployment: DeployWeb
+    - deployment: Dev
       environment: DEV
       strategy:
         runOnce:
@@ -53,7 +53,7 @@ stages:
     variables:
     - group: Test
     jobs:
-    - deployment: DeployWeb
+    - deployment: Test
       environment: Test
       strategy:
         runOnce:
@@ -78,8 +78,8 @@ stages:
     variables:
     - group: Prod
     jobs:
-    - deployment: DeployWeb
-      environment: PRD
+    - deployment: Prod
+      environment: Prod
       strategy:
         runOnce:
           deploy:
